@@ -16,7 +16,7 @@ DOWNLOAD_PATH = os.path.join(user_home, "Music") # DEFAULT path
 
 # Argument parser setup
 parser = argparse.ArgumentParser(description="Download YouTube audio with a URL.")
-parser.add_argument("arg1", type=str, help="URL of the video to download.")
+parser.add_argument("video_URL", type=str, help="URL of the video to download.")
 args = parser.parse_args()
 
 def check_url(url):
@@ -35,9 +35,9 @@ def download_audio(url):
     ys.download(DOWNLOAD_PATH)
     print(Fore.GREEN + Style.BRIGHT + "Download complete! File saved to: " + DOWNLOAD_PATH + " ")
 
-if args.arg1:
-    if check_url(args.arg1):
-        download_audio(args.arg1)    
+if args.video_URL:
+    if check_url(args.video_URL):
+        download_audio(args.video_URL)    
 else:
     url = input(Fore.CYAN + Style.BRIGHT + "Enter the YouTube URL: ")
     if check_url(url):
