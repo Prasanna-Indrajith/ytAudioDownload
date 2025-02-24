@@ -20,7 +20,7 @@ parser.add_argument("video_URL", type=str, help="URL of the video to download.")
 args = parser.parse_args()
 
 def check_url(url):
-    if (url.startswith("https://youtu.be/") or url.startswith("https://youtube.com/")):
+    if (url.startswith("https://youtu.be/") or url.startswith("https://www.youtube.com/")):
         return True
     else:
         print(Fore.RED + Style.BRIGHT + "Error: Invalid URL! Please use a valid YouTube URL starting with 'https://youtu.be/'.")
